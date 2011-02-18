@@ -5,6 +5,10 @@ require 'rss'
 #   for osx use homebrew (http://mxcl.github.com/homebrew/) to install
 #     sudo brew install axel
 
+unless ENV['PATH'].split(":").any? {|f| File.exists?("#{f}/axel")}
+  puts "axel not in path. Please install axel or correct path if installed."
+  exit
+end
 
 puts "\nDownloading rss index"
 puts "======================================================================="

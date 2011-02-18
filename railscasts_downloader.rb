@@ -1,4 +1,4 @@
-#!/usr/bin/ruby
+#!/usr/bin/env ruby
 require 'rss'
 
 # requires axel (http://axel.alioth.debian.org/) to be installed

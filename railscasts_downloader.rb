@@ -18,8 +18,8 @@ rss = RSS::Parser.parse(rss_string, false)
 videos_urls = rss.items.map { |it| it.enclosure.url }.reverse
 
 videos_filenames = videos_urls.map {|url| url.split('/').last }
-incomplete_filenames = Dir.glob('*.mov.st').collect{|f| f.sub(/.st$/, '')}
-existing_filenames = Dir.glob('*.mov') - incomplete_filenames
+incomplete_filenames = Dir.glob('*.mp4.st').collect{|f| f.sub(/.st$/, '')}
+existing_filenames = Dir.glob('*.mp4') - incomplete_filenames
 missing_filenames = videos_filenames - existing_filenames
 
 puts "\nResuming #{incomplete_filenames.size} inclompletd videos"
